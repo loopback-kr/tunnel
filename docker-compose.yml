@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   tunnel:
-    image: ubuntu:18.04
+    image: loopbackkr/tunnel:latest
     tty: true
     stdin_open: true
     container_name: ssh_tunnel
