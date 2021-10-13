@@ -25,7 +25,8 @@ RUN sed -i 's/^deb http:\/\/archive.ubuntu.com/deb https:\/\/mirror.kakao.com/g'
 RUN sed -i 's/^deb http:\/\/security.ubuntu.com/deb https:\/\/mirror.kakao.com/g' /etc/apt/sources.list
 
 ### Settings SSH-tunneling
-RUN apt install -y \
+RUN apt update \
+    && apt install -y \
         openssh-server
 # Set sshd_config
 RUN sed -i 's/^#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
