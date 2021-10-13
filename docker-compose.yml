@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  tunnel:
+    image: ubuntu:18.04
+    tty: true
+    stdin_open: true
+    container_name: ssh_tunnel
+    hostname: Tunnel
+    restart: always
+    ports:
+      - '22222:22'
+    environment:
+      - TZ=Asia/Seoul
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
+      - PUB_KEY='<YOUR-PUBLIC-KEY>'
